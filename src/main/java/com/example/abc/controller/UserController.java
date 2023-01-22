@@ -1,4 +1,4 @@
-package com.example.abc.config;
+package com.example.abc.controller;
 
 import com.example.abc.entity.User;
 import com.example.abc.service.CustomUserDetailsService;
