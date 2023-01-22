@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Bulk Upload</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h3>Bulk Upload</h3>
+<section class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>Upload File Example</h2>
+<!--                <p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>-->
+                <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" name="file" class="form-control-file">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload File</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent View</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile No</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="client : ${clients}">
+    <form action="#" th:action="@{/update?(id=${client.id})}" th:object="${client}" method="post">
+      <td><input name="fullName" th:value="${client.fullName}"/></td>
+      <td><input name="email" th:value="${client.email}"/></td>
+      <td><input name="mobileNo" th:value="${client.mobileNo}"/></td>
+      <td>
+        <select class="form-control" id="status" name="status">
+          <option th:value="${null}">select option</option>
+          <option th:each="option : ${options}" th:value="${option}" th:text="${option}"
+                  th:selected="(${client.status} == ${option})" ></option>
+        </select>
+      </td>
+      <td>
+        <button type="submit"/>Submit</button>
+      </td>
+    </form>
+
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
